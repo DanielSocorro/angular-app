@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { AfterViewInit, Component, Input } from '@angular/core';
 
 @Component({
@@ -20,3 +21,17 @@ export class TitleComponent implements AfterViewInit {
 
   }
 }
+  class Test {
+    property: any;
+
+    constructor() {}
+
+  getProperty(){
+      return this.property
+  }
+
+  setProperty(){
+
+  }
+  }
+
