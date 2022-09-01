@@ -1,5 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { AfterViewInit, Component, Inject, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -8,10 +8,11 @@ import { AfterViewInit, Component, Input } from '@angular/core';
 })
 export class TitleComponent implements AfterViewInit {
   @Input() titleText = 'this is my title';
-  showTitle: boolean;
+  showTitle: true;
+  test = 'this is a test';
 
-  constructor() {
-    this.showTitle = true;
+  constructor(@Inject(DOCUMENT) document) {
+
   }
 
   ngAfterViewInit(): void {
@@ -21,17 +22,19 @@ export class TitleComponent implements AfterViewInit {
 
   }
 }
-  class Test {
-    property: any;
 
-    constructor() {}
+class Auto {
+  puertas;
+  velocidad;
+  color;
 
-  getProperty(){
-      return this.property
+  constructor(doors, speed, color) {
+    this.doors = 'doors';
+    this.speed = 'speed';
+    this.color = 'color';
   }
 
-  setProperty(){
+  getPuertas () {
 
   }
-  }
-
+}
